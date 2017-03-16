@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="gnow.com.br" version="0.6.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="gnow.com.br" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>4G Now</name>
     <description>
         Internet sem limites
@@ -28,3 +28,4 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
+keytool -genkey -v -keystore 4gnow.keystore -alias 4gnow -keyalg RSA -keysize 2048 -validity 10000
