@@ -28,4 +28,3 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
-keytool -genkey -v -keystore 4gnow.keystore -alias 4gnow -keyalg RSA -keysize 2048 -validity 10000
