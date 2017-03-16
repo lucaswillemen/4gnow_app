@@ -1,0 +1,48 @@
+<aside id="sidebar-left" class="sidebar-left">
+    <div class="sidebar-header">
+        <div class="sidebar-title">
+            Menu
+        </div>
+        <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+            <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+        </div>
+    </div>
+    <div class="nano" style="height: 100%;background: #1D2127;">
+        <div class="nano-content">
+            <nav id="menu" class="nav-main" role="navigation">
+                <ul class="nav nav-main">
+                    <li ng-class="{'nav-active': cur_state == 'home'}">
+                        <a ui-sref="app.home" href="">
+                            <i class="fa fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li ng-class="{'nav-active': sub_state == 'painel'}" ng-hide="revenda != 1">
+                        <a ui-sref="app.revenda">
+                            <i class="fa fa-dashboard"></i>
+                             Painel de revenda
+                        </a>
+                    </li>
+                    <li ng-class="{'nav-active': sub_state == 'adicionar'}"  ng-hide="revenda != 1">
+                        <a ui-sref="app.adicionar">
+                            <i class="fa fa-plus"></i>
+                             Adicionar cliente
+                        </a>
+                    </li>
+                    <li ng-class="{'nav-active': sub_state == 'extrato'}" ng-hide="revenda != 1">
+                        <a ui-sref="app.extrato">
+                            <i class="fa fa-file"></i>
+                             Extrato de pontos
+                        </a>
+                    </li>
+                    <li ng-class="{'nav-active': sub_state == 'indicados'}" ng-hide="revenda != 1">
+                        <a ui-sref="app.indicados">
+                            <i class="fa fa-users"></i>
+                             Lista de clientes
+                        </a>
+                    </li>                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,276 @@
+<style type="text/css">
+    .lol{
+        padding: 0px;
+    }
+    .lol img{        
+        position: absolute;
+        top: -15px;
+    }
+</style>
+<div class="inner-wrapper">
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Home</h2>
+            <div class="right-wrapper pull-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a ui-sref="app.home">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                </ol>
+                <a class="sidebar-right-toggle" data-open="sidebar-right"></a>
+            </div>
+        </header>
+        <div class="row">            
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="row">
+                    <div ng-hide="revenda != 1">
+                        <div class="col-md-12" ng-show="user.ponto >= 0 && user.ponto < 300">
+                            <section class="panel panel-featured-bottom panel-featured-top panel-featured-primary">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Sem Graduação</h2>
+                                </header>
+                                <div class="panel-body">
+                                <div class="col-sm-12 col-md-11">
+                                    <div class="progress progress-striped progress-xl active light ">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{user.ponto}}" aria-valuemin="0" aria-valuemax="100" style="width: {{user.ponto/300*100}}%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/bronze.png" width="100%"></div>
+                                    <div  class="text-center col-sm-12">
+                                        <h4 class="text-center">{{user.ponto}} / 300 pontos para bronze</h4>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12" ng-show="user.ponto >= 300 && user.ponto < 900">
+                            <section class="panel panel-featured-bottom panel-featured-top panel-featured-primary">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Graduação Bronze</h2>
+                                </header>
+                                <div class="panel-body">
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/bronze.png" width="100%"></div>
+                                <div class="col-sm-12 col-md-10">
+                                    <div class="progress progress-striped progress-xl active light ">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{user.ponto}}" aria-valuemin="0" aria-valuemax="100" style="width: {{user.ponto/900*100}}%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/prata.png" width="100%"></div>
+                                    <div  class="text-center col-sm-12">
+                                        <h4 class="text-center">{{user.ponto}} / 900 pontos para prata</h4>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12" ng-show="user.ponto >= 900 && user.ponto < 2700">
+                            <section class="panel panel-featured-bottom panel-featured-top panel-featured-primary">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Graduação Prata</h2>
+                                </header>
+                                <div class="panel-body">
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/prata.png" width="100%"></div>
+                                <div class="col-sm-12 col-md-10">
+                                    <div class="progress progress-striped progress-xl active light ">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{user.ponto}}" aria-valuemin="0" aria-valuemax="100" style="width: {{user.ponto/2700*100}}%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/ouro.png" width="100%"></div>
+                                    <div  class="text-center col-sm-12">
+                                        <h4 class="text-center">{{user.ponto}} / 2700 pontos para ouro</h4>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12" ng-show="user.ponto >= 2700 && user.ponto < 8100">
+                            <section class="panel panel-featured-bottom panel-featured-top panel-featured-primary">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Graduação Ouro</h2>
+                                </header>
+                                <div class="panel-body">
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/ouro.png" width="100%"></div>
+                                <div class="col-sm-12 col-md-10">
+                                    <div class="progress progress-striped progress-xl active light ">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{user.ponto}}" aria-valuemin="0" aria-valuemax="100" style="width: {{user.ponto/8100*100}}%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/platina.png" width="100%"></div>
+                                    <div  class="text-center col-sm-12">
+                                        <h4 class="text-center">{{user.ponto}} / 8100 pontos para platina</h4>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12" ng-show="user.ponto >= 8100 && user.ponto < 24300">
+                            <section class="panel panel-featured-bottom panel-featured-top panel-featured-primary">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Graduação Platina</h2>
+                                </header>
+                                <div class="panel-body">
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/platina.png" width="100%"></div>
+                                <div class="col-sm-12 col-md-10">
+                                    <div class="progress progress-striped progress-xl active light ">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{user.ponto}}" aria-valuemin="0" aria-valuemax="100" style="width: {{user.ponto/24300*100}}%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 hidden-sm hidden-xs lol"><img src="assets/images/elo/diamante.png" width="100%"></div>
+                                    <div  class="text-center col-sm-12">
+                                        <h4 class="text-center">{{user.ponto}} / 24300 pontos para diamante</h4>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <section class="panel panel-featured-top panel-featured-primary">
+                            <header class="panel-heading">
+                                <h2 class="panel-title">Arquivo de configuração</h2>
+                            </header>
+                            <div class="panel-body">
+                                <div  class="text-center col-sm-12">
+                                    <h4 class="text-center">
+                            <p class="ng-binding">Arquivo EHI: <a href="https://4gnow.com.br/app/ehi/{{user.server_name}}">http://4gnow.com.br/app/ehi/{{user.server_name}}</a></p></h4>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-6">
+                        <section class="panel panel-featured-left panel-featured-primary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-primary">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Validade</h4>
+                                            <div class="info">
+                                                <strong class="amount">{{user.vencimento | date: 'dd/MM/yyyy'}}</strong>
+                                            </div>
+                                            <strong class="">{{user.vencimento > today ? 'Ativado' : 'Bloqueado'}}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-6">
+                        <section class="panel panel-featured-left panel-featured-quartenary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-quartenary">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Dados de conexão HTTP Injector</h4>
+                                            <div class="info">
+                                                <strong class="">Usuário SSH: {{user.telefone}}</strong>
+                                            </div>
+                                            <strong class="">Senha SSH: {{user.senha}}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-6" ui-sref="app.revenda" style="cursor: pointer"  ng-hide="revenda != 1">
+                        <section class="panel panel-featured-left panel-featured-secondary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-secondary">
+                                            <i class="fa fa-usd"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Cotas</h4>
+                                            <div class="info">
+                                                <strong class="amount">{{user.saldo}}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-6"  ng-hide="revenda != 1" style="cursor: pointer"  ui-sref="app.indicados">
+                        <section class="panel panel-featured-left panel-featured-tertiary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-tertiary">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Indicados</h4>
+                                            <div class="info">
+                                                <strong class="amount">{{indicado.count}}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!--
+                    <div class="col-md-12 col-lg-6 col-xl-6">
+                        <section class="panel panel-featured-left panel-featured-tertiary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-primary">
+                                            <i class="fa fa-cog"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Configuração</h4>
+                                            <div class="info">
+                                                <strong class="amount">Aprenda a instalar</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-6">
+                        <section class="panel panel-featured-left panel-featured-tertiary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-secondary">
+                                            <i class="fa fa-server"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Servidores</h4>
+                                            <div class="info">
+                                                <strong class="amount">Baixe o arquivo</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>-->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

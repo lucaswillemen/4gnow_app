@@ -1,0 +1,22 @@
+ body{
+    padding-right: 0px !important;}
+        a {
+            cursor: pointer
+        }
+        
+        .has-feedback .form-control-feedback {
+            right: 15px;
+            top: 10px;
+        }
+        
+        .has-feedback label~.form-control-feedback {
+            top: 36px;
+            right: 0px;
+        }
+        .col-md-12 label~.form-control-feedback, .col-md-6 label~.form-control-feedback {
+            top: 36px;
+            right: 15px !important;
+        }
+         #thm_mp_cntnr {
+            position: fixed;
+        }

@@ -1,0 +1,98 @@
+<div class="inner-wrapper">
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Adicionar cliente</h2>
+            <div class="right-wrapper pull-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a ui-sref="app.home">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Adicionar cliente</span></li>
+                </ol>
+                <a class="sidebar-right-toggle" data-open="sidebar-right"></a>
+            </div>
+        </header>
+
+        <form id="form" class="form-horizontal" ng-hide="complete || overlay">
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Adicionar novo cliente</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="form_error">
+                        <strong>Ops!</strong> Email ou celular já cadastrado.
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Nome: </label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" class="form-control" ng-model="data.nome" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Celular com DDD: </label>
+                        <div class="col-sm-8">
+                            <input type="number" name="telefone" class="form-control" ng-model="data.telefone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Email: </label>
+                        <div class="col-sm-8">
+                            <input type="email" name="email" class="form-control" ng-model="data.email" required>
+                        </div>
+                    </div>
+                </div>
+                <footer class="panel-footer text-right">
+                    <button class="btn btn-primary">Cadastrar </button>
+                </footer>
+            </section>
+        </form>
+        <section class="panel" ng-show="overlay && !complete">
+            <header class="panel-heading">
+                <h2 class="panel-title">Adicionar novo cliente</h2>
+            </header>
+            <div class="panel-body">
+                <h3 class="text-center">Criando conta</h3>
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
+                    <div class="bounce-loader">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+        </section>
+        <section class="panel" ng-show="complete">
+            <header class="panel-heading">
+                <h2 class="panel-title">Adicionar novo cliente.</h2>
+                <span>Server: {{res.server_name}}</span>
+            </header>
+            <div class="panel-body">
+                <div class="widget-summary">
+                    <div class="widget-summary-col widget-summary-col-icon hidden-xs">
+                        <div class="summary-icon bg-quartenary">
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="widget-summary-col">
+                        <div class="summary">
+                            <h4 class="title">Dados de conexão</h4>
+                            <div class="info">
+                                <strong class="amount ng-binding">Usuário: {{res.user_con}}</strong>
+                            </div>
+                            <strong class="ng-binding">Senha: {{res.senha_con}}</strong>
+                            <p class="ng-binding">Arquivo EHI: <a href="https://4gnow.com.br/app/ehi/{{res.user_con}}">http://4gnow.com.br/app/ehi/{{res.user_con}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer  text-right">
+                <button type="button" class="btn btn-primary" ng-click="whatsapp_open()"><i class="fa fa-whatsapp"></i> Enviar no WhatsApp</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="go_back()">Fechar</button>
+            </div>
+        </section>
+</div>

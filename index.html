@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="fixed">
+
+<script type="text/javascript">
+    window.version = "0.9"
+    window.mobile = true
+    if (window.location.href.split("/")[2] == "localhost") {
+        window.api = "https://4gnow.com.br/app/"
+        window.config_base = {
+            "facebook_id": '836611273093285',
+            "analytcs_id": 'UA-90963924-1',
+            "facebook_pixel": '1087283108045883'
+        }
+    } else {
+        window.api = "https://4gnow.com.br/app/api/"
+        window.config_base = {
+            "facebook_id": '2069201299973723',
+            "analytcs_id": 'UA-90963924-1',
+            "facebook_pixel": '1087283108045883'
+        }
+    };
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4G Now - Sistema</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="assets/images/favicon.png">
+    <meta name="theme-color" content="#08c">
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://4gnow.com.br/assets/imges/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content="4G Now - Sistema">
+    <meta property="og:title" content="4G Now - Sistema" />
+    <meta property="og:description" content="Internet 4G sem franquia para todo Brasil" />
+    <meta property="og:url" content="https://4gnow.com.br/" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css?v0.8" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css?v0.8" />
+    <link rel="stylesheet" href="assets/css/datepicker.css?v0.8" />
+    <link rel="stylesheet" href="assets/css/datatable.css?v0.8" />
+    <link rel="stylesheet" href="assets/css/theme.css?v0.8" />
+    <link rel="stylesheet" href="assets/css/custom.css?v0.8" />
+    <link rel="stylesheet" href="assets/css/select2.css?v0.8" />
+
+    <!--Third-->
+    <script src="assets/js/modernizr.js?v0.8"></script>
+    <script src="assets/js/sdk.js?v0.8"></script>
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js?v0.8"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js?v0.8"></script>
+
+
+    <!--Angular -->
+    <script src="angular/angular.min.js?v0.8"></script>
+    <script src="angular/angular-router.js?v0.8"></script>
+    <script src="angular/angular-mask.js?v0.8"></script>
+    <script src="angular/angular-storage.js?v0.8"></script>
+
+    <!--Controller-->
+    <script src="controller/app.js?v0.8"></script>
+    <script src="controller/state.js?v0.8"></script>
+    <script src="controller/menu.js?v0.8"></script>
+    <script src="controller/home.js?v0.8"></script>
+
+    <script src="controller/register.js?v0.8"></script>
+    <script src="controller/login.js?v0.8"></script>
+    <script src="controller/ehi.js?v0.8"></script>
+    <script src="controller/add.js?v0.8"></script>
+    <script src="controller/fatura.js?v0.8"></script>
+    <script src="controller/extrato.js?v0.8"></script>
+    <script src="controller/indicados.js?v0.8"></script>
+    <script src="controller/adicionar.js?v0.8"></script>
+    <script src="controller/revenda.js?v0.8"></script>
+<style type="text/css">
+    .inner-wrapper {
+        background: url(assets/images/bg3.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+            table { width:100%; }
+</style>
+</head>
+
+<body ng-app="StartApp" class="loading-overlay-showing">
+    <div class="loading-overlay">
+        <div class="bounce-loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <ng-view ui-view="header"></ng-view>
+    <ng-view ui-view="menu"></ng-view>
+    <ng-view ui-view="root"></ng-view>
+
+    <script src="assets/js/jquery.js?v0.8"></script>
+    <script src="assets/js/bootstrap.js?v0.8"></script>
+    <script src="assets/js/validator.js?v0.8"></script>
+    <script src="assets/js/datepicker.js?v0.8"></script>
+    <script src="assets/js/datatable.js?v0.8"></script>
+    <script src="assets/js/select2.js?v0.8"></script>
+    <script src="assets/js/moment.js?v0.8"></script>
+
+
+    <div id="modalAtualizar" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Versão do aplicativo desatualizada</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success">
+                        <strong>Ops!</strong> Clique no botão abaixo para atualizar seu APP
+                    </div>
+                    <a class="btn btn-primary btn-block" ng-click="new_version()">Ir para Google Play</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

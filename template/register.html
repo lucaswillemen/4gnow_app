@@ -1,0 +1,65 @@
+<style type="text/css">
+    .lg {
+        background: url(assets/images/bg2.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+<div class="lg">
+    <section class="body-sign">
+        <div class="center-sign">
+            <div class="panel panel-sign">
+                <div class="panel-body">
+                    <img src="assets/images/4gnow_logo.png" width="100%" alt="Porto Admin" /><br><br>
+                    <div class="alert alert-danger" ng-show="FormError">
+                        <strong>Ops!</strong> Email ou celular já cadastrado.
+                    </div>
+                    <div class="alert alert-danger" ng-show="check">
+                        <strong>Ops!</strong> Link de indicação está incorreto.
+                    </div>
+                    <form name="RegisterForm" id="form" ng-hide="check || overlay">
+                        <div class="form-group mb-lg">
+                            <label>Representante</label>
+                            <input name="nome" ng-model="data.indicador" type="text" class="form-control" ng-readonly="true" />
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>Nome</label>
+                            <input name="nome" ng-model="data.nome" type="text" class="form-control" required ng-readonly="facebook_loaded" />
+                        </div>
+
+                        <div class="form-group mb-lg">
+                            <label>Celular</label>
+                            <input type="number" name="celular" ng-model="data.telefone" type="text" class="form-control" required/>
+                        </div>
+
+                        <div class="form-group mb-lg">
+                            <label>Email</label>
+                            <input name="email" type="email" ng-model="data.email" class="form-control" required/>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                            </div>
+                            <div class="col-sm-4">
+                            </div>
+                            <div class="col-sm-4 text-right">
+                                <button ng-hide="overlay" type="submit" class="btn btn-primary hidden-xs">Cadastrar</button>
+                                <button ng-hide="overlay" type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h3 ng-show="overlay" class="text-center">Criando conta</h3>
+                    <div class="col-md-12" ng-show="overlay">
+                        <div class="bounce-loader">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

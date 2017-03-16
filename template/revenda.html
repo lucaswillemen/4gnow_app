@@ -1,0 +1,205 @@
+<div class="inner-wrapper">
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Revenda</h2>
+            <div class="right-wrapper pull-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a ui-sref="app.home">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Revenda</span></li>
+                </ol>
+                <a class="sidebar-right-toggle" data-open="sidebar-right"></a>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="row">
+                    <section class="panel col-md-12">
+                        <header class="panel-heading">
+
+                            <h2 class="panel-title">Link de indicação</h2>
+                        </header>
+                        <div class="panel-body">
+                            <form class="form-horizontal form-bordered" method="get">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" id="inputDefault" ng-model="revenda_link">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <div class="col-md-12 col-lg-4 col-xl-4" style="cursor: pointer">
+                        <section class="panel panel-featured-left panel-featured-secondary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-secondary">
+                                            <i class="fa fa-usd"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Cotas</h4>
+                                            <div class="info">
+                                                <strong class="amount">{{data.saldo}}</strong>
+                                            </div>
+                                            <div>Pontos: {{data.ponto}} </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-4 col-xl-4">
+                        <section class="panel panel-featured-left panel-featured-tertiary" id="btnEnviar" data-toggle='modal' data-target='#modalEnviar' style="cursor: pointer">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-tertiary">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Transferir</h4>
+                                            <div class="info">
+                                                <strong class="amount">Cotas</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-12 col-lg-4 col-xl-4">
+                        <section class="panel panel-featured-left panel-featured-primary" id="btnAtivar" data-toggle='modal' data-target='#modalAtivar' style="cursor: pointer">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-primary">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Usar cotas</h4>
+                                            <div class="info">
+                                                <strong class="amount">Ativar cliente</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<div id="modalAtivar" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ativar cliente com cota</h4>
+            </div>
+            <form id="formAtivar" onsubmit="return false" ng-hide="completeAtivar">
+                <div class="modal-body clearfix">
+                    <div class="alert alert-danger" ng-show="FormAtivarStatus">
+                        <strong>Cotas insuficientes.</strong> Você não possui cota para realizar essa ativação.
+                    </div>
+                    <div class="form-group">
+                        <label>Cliente:</label>
+                        <input class="form-control select2" name="ativar_email" ng-model="data_ativar.cliente" id="ativar_email" required>
+                    </div>
+                </div>
+                <div class="modal-footer" ng-hide="overlayAtivar">
+                    <input type="submit" value="Ativar" class="btn btn-primary" />
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+                <div class="modal-footer" ng-show="overlayAtivar">
+                    <h3 class="text-center">Ativando conta</h3>
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="bounce-loader">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-body" ng-show="completeAtivar">
+                <div class="panel panel-featured-left panel-featured-quartenary">
+                    <div class="panel-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-quartenary">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Pacote ativado</h4>
+                                    <div class="info">
+                                        <strong class="amount ng-binding">Validade: {{data_ativar.vencimento | date: 'dd/MM/yyyy'}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" ng-show="completeAtivar">
+                <button type="button" class="btn btn-primary" ng-click="whatsapp_open()"><i class="fa fa-whatsapp"></i> Enviar no WhatsApp</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="modalEnviar" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Transferir cotas</h4>
+            </div>
+            <form id="formEnviar" onsubmit="return false" ng-hide="completeEnviar">
+                <div class="modal-body clearfix">
+                    <div class="alert alert-danger" ng-show="FormEnviarStatus">
+                        <strong>Cotas insuficientes.</strong> Você não possui cota para realizar essa transferencia.
+                    </div>
+                    <div class="alert alert-success" ng-show="FormEnviarSuccess">
+                        <strong>Cotas transferida.</strong> A transferência foi feita e o cliente agora pode revender.
+                    </div>
+                    <div class="form-group">
+                        <label>Cliente:</label>
+                        <input class="form-control select2" name="ativar_transferir" ng-model="data_ativar.cliente" id="ativar_transferir" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cotas:</label>
+                        <input type="number" min="10" class="form-control" name="cotas" ng-model="data_ativar.cotas" id="cotas" required>
+                    </div>
+                </div>
+                <div class="modal-footer" ng-hide="overlayAtivar">
+                    <input type="submit" value="Ativar" class="btn btn-primary" />
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

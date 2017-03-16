@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="gnow.com.br" version="0.6.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>4G Now</name>
+    <description>
+        Internet sem limites
+    </description>
+    <author email="contato@mitz.com.br" href="https://4gnow.com.br">
+        Mitz Tecnology
+    </author>
+    <icon src="assets/images/4glive_logo_app.png" />
+    <content src="index.html#/login" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
+    <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
+    <access origin="*" />
+    <access origin="whatsapp:*" launch-external="yes" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <allow-intent href="whatsapp:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
